@@ -7,7 +7,7 @@ built and shipped for IIT Hyderabad in one place.
 > The projects it showcases keep their own names — Sanchari, Nivas, Ruchi —
 > each on its own subdomain underneath.
 
-**Status:** live at `iith.online` · **Repo:** `saichandanmettu/iith-garage`
+**Status:** live at `iith.online` · **Repo:** `chandanmettu/iith-garage`
 
 Plain HTML, CSS and JavaScript. No build step, consistent with everything
 else in the suite.
