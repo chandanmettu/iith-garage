@@ -171,7 +171,7 @@ var PROJECTS = [
     zone: 'Transport',
     category: 'Transport',
     url: 'https://sanchari.iith.online',
-    github: 'https://github.com/saichandanmettu/iith-sanchari',
+    github: 'https://github.com/chandanmettu/iith-sanchari',
     status: 'live',
     statusNote:
       'Routes, schedules and live countdowns are live and in use. Ticketing is built end to end and verified server-side, but it has not been switched on — no real payment has run through it yet.',
@@ -210,7 +210,7 @@ var PROJECTS = [
     zone: 'Housing',
     category: 'Housing',
     url: 'https://nivas.iith.online',
-    github: 'https://github.com/saichandanmettu/iith-nivas',
+    github: 'https://github.com/chandanmettu/iith-nivas',
     status: 'live',
     statusNote:
       'Live on PHP and MySQL with real student-posted listings. Open source under MIT.',
@@ -284,7 +284,7 @@ var PROJECTS = [
     zone: 'Dining',
     category: 'Dining',
     url: 'https://ruchi.iith.online',
-    github: 'https://github.com/saichandanmettu/iith-mess',
+    github: 'https://github.com/chandanmettu/iith-mess',
     status: 'testing',
     statusNote:
       'Live at ruchi.iith.online with registration, the counter scanner and the admin console all working. Marked testing rather than live because a registration cycle has not yet been run with real students.',
