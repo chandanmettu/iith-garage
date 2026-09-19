@@ -50,4 +50,4 @@ roadmap, timeline, stack and costs. Keep claims structural and verifiable:
 The “Proving Ground” interface lives in `assets/style.css` and
 `assets/app.js`. Update all matching `?v=` references after changes, then test
 the main experience plus the `?flat` screenshot mode. Release through the
-workspace [`DEPLOY.md`](../DEPLOY.md).
+workspace [`DEPLOY.md`](../../DEPLOY.md).

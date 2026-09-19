@@ -79,7 +79,7 @@ var PROJECTS = [
     zone: 'Academics',
     category: 'Academics',
     url: 'https://abhyas.iith.online',
-    github: 'https://github.com/chandanmettu/iith-resource-hub',
+    github: 'https://github.com/chandanmettu/iith-abhyas',
     status: 'live',
     statusNote:
       'Live at abhyas.iith.online with a populated catalogue, public submissions, quarantine and admin moderation. Uploaded files and mutable catalogue data are managed on the server, outside Git.',
@@ -284,7 +284,7 @@ var PROJECTS = [
     zone: 'Dining',
     category: 'Dining',
     url: 'https://ruchi.iith.online',
-    github: 'https://github.com/chandanmettu/iith-mess',
+    github: 'https://github.com/chandanmettu/iith-ruchi',
     status: 'testing',
     statusNote:
       'The frontend is live at ruchi.iith.online, but it is still using browser-local demo data. The production Supabase schema is ready; OAuth, staff roles and a real registration-cycle acceptance test are still pending.',
