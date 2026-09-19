@@ -27,7 +27,7 @@ var SITE = {
   author: 'Chandan Mettu',
   location: 'IIT Hyderabad (17.599° N, 78.125° E)',
   coordinates: '17.599° N, 78.125° E',
-  version: '2026.8.0'
+  version: '2026.9.0'
 };
 
 /* ---- Status vocabulary ------------------------------------------------
@@ -79,10 +79,10 @@ var PROJECTS = [
     zone: 'Academics',
     category: 'Academics',
     url: 'https://abhyas.iith.online',
-    github: null,
+    github: 'https://github.com/chandanmettu/iith-resource-hub',
     status: 'live',
     statusNote:
-      'Live at abhyas.iith.online. Browse, search and the reference shelf work; the contribution flow and the contributor leaderboard are in. The catalogue is still being filled out course by course.',
+      'Live at abhyas.iith.online with a populated catalogue, public submissions, quarantine and admin moderation. Uploaded files and mutable catalogue data are managed on the server, outside Git.',
     year: '2026',
     accentColor: '#F28700',
     metric: { label: 'Pages of material', value: '15K+' },
@@ -287,7 +287,7 @@ var PROJECTS = [
     github: 'https://github.com/chandanmettu/iith-mess',
     status: 'testing',
     statusNote:
-      'Live at ruchi.iith.online with registration, the counter scanner and the admin console all working. Marked testing rather than live because a registration cycle has not yet been run with real students.',
+      'The frontend is live at ruchi.iith.online, but it is still using browser-local demo data. The production Supabase schema is ready; OAuth, staff roles and a real registration-cycle acceptance test are still pending.',
     year: '2026',
     started: 'Jul 2026',
     accentColor: '#F59E0B',
@@ -299,8 +299,8 @@ var PROJECTS = [
       'Live seat counts per dining hall, so a hall filling up is visible before you commit to it',
       'Counter scanner that reads the barcode already printed on the student ID card — no new card to issue',
       'Admin console for the mess office to set per-hall caps and watch registrations land',
-      'Runs against seeded local data or a real Postgres backend, switched by a single config file',
-      'Next: the daily menu per meal and hall, à la carte extras, cuisine tags, and calorie information'
+      'Runs against seeded local data or a hardened Postgres backend, switched by a single config file',
+      'Daily-menu, extras, cuisine and nutrition tables are ready; the reader/editor UI is next'
     ],
     stack: ['HTML/CSS/JS', 'Supabase Postgres', 'Barcode scanning'],
     specs: {
