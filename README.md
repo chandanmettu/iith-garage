@@ -7,7 +7,7 @@ subdomain.
 | | |
 |---|---|
 | **Live** | [iith.online](https://iith.online), the apex of the IITH suite |
-| **Repository** | `github.com/chandanmettu/iith-garage` (public). The local folder is `IITH Archive`, which was the old name. |
+| **Repository** | `github.com/chandanmettu/iith-garage` (public). |
 | **Push via** | SSH host alias `github-iith-garage` (deploy key `~/.ssh/iith-garage-deploy`) |
 | **Deploy** | Hostinger Git auto-deploy from `main`. **A push is a production release.** |
 | **Agent policy** | Ask before pushing. |
