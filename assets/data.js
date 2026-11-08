@@ -27,7 +27,7 @@ var SITE = {
   author: 'Chandan Mettu',
   location: 'IIT Hyderabad (17.599° N, 78.125° E)',
   coordinates: '17.599° N, 78.125° E',
-  version: '2026.9.0'
+  version: '2026.11.0'
 };
 
 /* ---- Status vocabulary ------------------------------------------------
@@ -91,7 +91,7 @@ var PROJECTS = [
     highlights: [
       'Search by course code, professor or topic (⌘K)',
       'Four resource kinds — past papers, notes, assignments, reference books — each colour-coded',
-      'In-browser PDF reader (pdf.js) with a dark-mode inverter',
+      'In-browser PDF reader (pdf.js), served from the same site',
       'Open contribution flow with a review queue and a contributor leaderboard'
     ],
     stack: ['Vanilla JS', 'pdf.js', 'PHP API', 'Lenis'],
@@ -145,29 +145,30 @@ var PROJECTS = [
     blurb:
       'The public home of the track and field club — events, meet results, institute records, Inter-IIT and IAL archives, athlete profiles, galleries and the NSO attendance board. It replaces WhatsApp broadcasts and paper result sheets with something permanent and linkable.',
     highlights: [
-      '23 pages covering events, results, records, athlete profiles and galleries',
+      '32 pages covering events, results, records, athlete profiles, galleries and meet microsites',
       '45 scanned Inter-IIT and institute meet sheets digitised into a record ledger',
+      'Microsites for Aarambh, Diesta, Milan, IAL and every Inter-IIT from 2022 to 2026, with Milan 2026 results linked to athlete profiles',
       '14 handwritten pages of Diesta ’26 results transcribed by hand into structured data',
       'Kinetic typography and scroll choreography built on GSAP and Lenis, vendored locally with no CDN call',
       'Seven Python generators rebuild the profile, team and result pages from the source data rather than hand-editing HTML'
     ],
     stack: ['Static HTML5', 'GSAP', 'Lenis', 'Python generators'],
     specs: {
-      pages: '23 served',
+      pages: '32 served',
       'source data': '45 meet sheets',
       'build step': 'None',
       deploy: 'Auto on push'
     },
     next: [
       'Ingest more archived championship years into the record ledger',
-      'Move the NSO roster off hardcoded JS and onto the sheet the code already supports',
+      'Move the older NSO batches off hardcoded JS and onto the sheet the newest batch already reads from',
       'Accessibility pass across the scroll animation'
     ]
   },
   {
     slug: 'sanchari',
     logo: 'sanchari.png',
-    name: 'IITH Sanchari',
+    name: 'Sanchari',
     zone: 'Transport',
     category: 'Transport',
     url: 'https://sanchari.iith.online',
@@ -185,11 +186,12 @@ var PROJECTS = [
       'Three routes: the free campus shuttle, Patancheru at ₹30 a seat, and Miyapur at ₹100 flat to any stop',
       '11 timed stops on the Miyapur feeder, with a From IITH / To IITH toggle that flips both route cards',
       'Departure countdowns that refresh every 15 seconds, with schedules that expand in place',
+      'Works on phone, tablet and desktop, with the boarding pass printing out of a slot and tearing off',
       'Fare authority lives entirely server-side — the browser is never trusted to state the price',
-      'Boarding passes are signed with HMAC and checked against the server before the pass will show as valid',
+      'Boarding passes are signed with HMAC and checked against the server; the driver scan screen marks each one used, once',
       'No cookies, no analytics, no trackers — stated in the terms and true in the code'
     ],
-    stack: ['HTML/CSS/JS', 'PHP', 'HMAC signing', 'Mobile-first PWA'],
+    stack: ['HTML/CSS/JS', 'PHP', 'HMAC signing', 'QR passes'],
     specs: {
       routes: '3 mapped',
       stops: '11 timed',
@@ -198,9 +200,7 @@ var PROJECTS = [
     },
     next: [
       'Run the first genuine end-to-end transaction and switch ticketing on',
-      'Real tablet and desktop breakpoints — the app is mobile-only by construction today',
-      'Driver-side scan screen, so a pass can be marked used',
-      'Move pass issuance onto a webhook rather than the browser callback'
+      'Add the holiday calendar and the remaining boarding points to the timetable'
     ]
   },
   {
@@ -241,7 +241,7 @@ var PROJECTS = [
     ]
   },
   {
-    slug: 'lane1',
+    slug: 'aquatics',
     logo: 'lane1.svg',
     name: 'IITH Aquatics',
     zone: 'Facilities',
@@ -250,70 +250,70 @@ var PROJECTS = [
     github: null,
     status: 'live',
     statusNote:
-      'The registration portal is live. Lane 1 — the poolside gate scanner that goes with it — is finished and tested but deliberately not deployed yet.',
+      'The registration portal is live. IITH Aquatics Gate, the staff gate scanner that goes with it, is finished and tested but not deployed yet.',
     year: '2026',
     started: 'Jul 2026',
     accentColor: '#06B6D4',
     metric: { label: 'Fee tiers published', value: '10 tiers' },
     blurb:
-      'Everything needed to get into the SNCC pool on one page: the ten-tier fee structure, slot timings, safety rules and the full sign-up flow. It signposts rather than processes — and a companion gate-scanner app that checks subscribers in at the poolside is built and waiting for a home.',
+      'Everything needed to get into the SNCC pool on one page: the ten-tier fee structure, slot timings, safety rules and the full sign-up flow. It signposts rather than processes, and a companion gate scanner that checks swimmers in at the poolside is built and waiting to join it.',
     highlights: [
       'Ten-tier fee structure broken down per category, wrapped in a guided four-step sign-up',
       'Pool timings and safety rules published in one authoritative place instead of a circulated PDF',
-      'Lane 1 companion app: PIN-gated, installable to a home screen, and fully operational offline',
-      'Computes membership expiry that the pool’s own records never store — chaining renewals in date order against a fee table, with grace periods and manual overrides',
-      'Looks a member up by roll number from a USB barcode scanner or typed by hand at the gate'
+      'IITH Aquatics Gate: a staff app with a gate dashboard, a members list and a daily entry log',
+      'Computes membership expiry that the pool’s own records never store, chaining renewals in date order against a fee table, with grace periods and manual overrides, covered by 57 tests',
+      'Looks a swimmer up by roll number from a USB barcode scanner or typed by hand at the gate'
     ],
-    stack: ['Static HTML/CSS/JS', 'Google Sheets', 'Apps Script', 'Offline PWA'],
+    stack: ['Static HTML/CSS/JS', 'Google Forms', 'Google Sheets', 'Barcode scanning'],
     specs: {
       'fee tiers': '10 published',
       'sign-up': '4 steps',
-      companion: 'Built, not deployed',
+      'gate app': 'Built, not deployed',
       'build step': 'None'
     },
     next: [
-      'Find Lane 1 a home and onboard the gate staff',
+      'Merge the gate scanner into the live site, so one aquatics platform handles sign-up and the gate',
       'Replace the third-party payment QR with a committed static image',
-      'Write down who receives the form responses and holds the accounts — it matters when whoever runs it graduates'
+      'Write down who receives the form responses and holds the accounts, which matters when whoever runs it graduates'
     ]
   },
   {
-    slug: 'mess',
+    slug: 'ruchi',
     logo: 'mess.svg',
-    name: 'IITH Ruchi',
+    name: 'Ruchi',
     zone: 'Dining',
     category: 'Dining',
     url: 'https://ruchi.iith.online',
     github: 'https://github.com/chandanmettu/iith-ruchi',
-    status: 'testing',
+    status: 'live',
     statusNote:
-      'The frontend is live at ruchi.iith.online, but it is still using browser-local demo data. The production Supabase schema is ready; OAuth, staff roles and a real registration-cycle acceptance test are still pending.',
+      'Live at ruchi.iith.online as a daily dining beta: menus, Extras, saved dishes, My Plate and issue reports all work, with no login. Monthly registration is built, but its backend has not been switched on.',
     year: '2026',
     started: 'Jul 2026',
     accentColor: '#F59E0B',
-    metric: { label: 'Dining halls', value: '2 halls' },
+    metric: { label: 'Dishes on the menu', value: '130+' },
     blurb:
-      'Mess registration and a daily dining companion. Registration is the front door — pick your mess and dining hall with live seat counts. The daily menu, the extras, the cuisine of the day and what it costs you in calories are what should bring people back the other twenty-nine days of the month.',
+      'IIT Hyderabad’s daily mess companion. Today’s menu meal by meal, the paid Extras at the counter with their prices, dishes you save, a plate log of what you ate, and a quick way to report a problem to the mess. Built to be opened every day, not once a month.',
     highlights: [
-      'Registration in two taps — tap to arm, tap again to confirm, with a four-second window to change your mind',
-      'Live seat counts per dining hall, so a hall filling up is visible before you commit to it',
-      'Counter scanner that reads the barcode already printed on the student ID card — no new card to issue',
-      'Admin console for the mess office to set per-hall caps and watch registrations land',
-      'Runs against seeded local data or a hardened Postgres backend, switched by a single config file',
-      'Daily-menu, extras, cuisine and nutrition tables are ready; the reader/editor UI is next'
+      'Breakfast, lunch, snacks and dinner with a countdown to the next meal, picked automatically from the time of day',
+      'The four-week menu rotation resolved from the date, so nobody has to work out which week it is',
+      '42 paid Extras listed by day and meal, with the prices from the posted board',
+      'Vegetarian and egg / non-veg filters, card and list views, and saved dishes kept on your own device',
+      'My Plate, to record what you ate, without inventing nutrition figures that were never supplied',
+      'Issue reports with an optional photo, drafted on the phone and sent by email to the mess secretary'
     ],
-    stack: ['HTML/CSS/JS', 'Supabase Postgres', 'Barcode scanning'],
+    stack: ['HTML/CSS/JS', 'IndexedDB', 'Supabase (registration, planned)'],
     specs: {
-      halls: '2 (UDH / LDH)',
-      identity: '@iith.ac.in',
-      backend: 'Seeded or Postgres',
+      dishes: '130+ on the regular menu',
+      extras: '42 priced',
+      login: 'None needed',
       source: 'Public repo'
     },
     next: [
-      'The daily menu screen — per meal, per dining hall. The highest-leverage thing left',
-      'À la carte extras beyond the standard thali',
-      'Cuisine tags per item, so today is legible at a glance',
-      'Calorie and nutrition information per item'
+      'Switch on registration: Google sign-in, staff roles and a full registration-cycle test',
+      'Original photographs of the food actually served in the mess',
+      'Dish-level nutrition and serving sizes, once real figures exist',
+      'A standalone phone app'
     ]
   }
 ];
@@ -331,34 +331,28 @@ var BOARD = [
     icon: 'compass',
     items: [
       {
-        title: 'This archive on the root domain',
-        date: 'Aug 2026',
+        title: 'One aquatics platform',
+        date: 'Planned',
         isNew: true,
-        body: 'Putting this showcase on the iith.online apex, which is the parent of every project subdomain and currently still shows a hosting placeholder.',
-        tags: ['Deploy', 'Apex Domain']
+        body: 'The gate scanner joins the live pool portal, so swimmers sign up and staff run the gate from the same place.',
+        tags: ['Aquatics', 'Gate']
       },
       {
-        title: 'Ruchi daily menu loop',
-        date: 'Sep 2026',
-        body: 'The menu, extras, cuisine tags and calorie data that turn a once-a-month registration form into something worth opening daily.',
+        title: 'Ruchi real photos and nutrition',
+        date: 'Planned',
+        body: 'Original photographs of the food actually served, then dish-level nutrition and serving sizes once real figures exist.',
         tags: ['Ruchi', 'Menu', 'Nutrition']
       },
       {
         title: 'Nivas complaints channels',
-        date: 'Sep 2026',
+        date: 'Planned',
         body: 'Hostel maintenance complaints — Wi-Fi, washrooms, cleaning — and a wider institute route. Blocked on a question worth answering first: who actually receives them.',
         tags: ['Nivas', 'Complaints']
       },
       {
-        title: 'Driver-side pass verification',
-        date: 'Sep 2026',
-        body: 'A scan screen for Sanchari that checks a boarding pass against the server and marks it used, which is also what makes single-use tickets possible.',
-        tags: ['Sanchari', 'Ticketing']
-      },
-      {
         title: 'Athletics archive expansion',
-        date: 'Oct 2026',
-        body: 'More archived championship years ingested into the record ledger, and the NSO roster moved off hardcoded JS onto the sheet the code already supports.',
+        date: 'Planned',
+        body: 'More archived championship years ingested into the record ledger, and the older NSO batches moved off hardcoded JS onto the sheet the newest batch already reads from.',
         tags: ['Athletics', 'Archive']
       }
     ]
@@ -370,29 +364,22 @@ var BOARD = [
     icon: 'bolt',
     items: [
       {
-        title: 'Ruchi — registration to daily companion',
-        body: 'Three of seven planned surfaces are built: student registration, the counter scanner and the admin console. Still to come are the daily menu, à la carte extras, cuisine tags and calorie data.',
-        progress: 43,
-        progressNote: '3 of 7 surfaces built',
-        tags: ['Ruchi', 'Dining', 'Postgres']
+        title: 'Ruchi registration switch-on',
+        body: 'Monthly registration, the counter scanner and the admin console are built, and the database schema is ready. Google sign-in, staff roles and a full registration-cycle test come before it opens.',
+        meta: { text: 'Built · awaiting backend', state: 'testing' },
+        tags: ['Ruchi', 'Registration', 'Postgres']
       },
       {
         title: 'Sanchari ticketing switch-on',
-        body: 'The whole path is built — server-side fare lookup, signed pass, server-side verification. What is missing is not code: no genuine transaction has been run through it end to end yet.',
+        body: 'The whole path is built — server-side fare lookup, signed pass, server-side verification, single-use check-in at the driver scan screen. What is missing is not code: no genuine transaction has been run through it end to end yet.',
         meta: { text: 'Built · awaiting first live run', state: 'testing' },
         tags: ['Sanchari', 'Ticketing', 'QR']
       },
       {
-        title: 'Lane 1 poolside deployment',
-        body: 'The gate scanner is finished, including the expiry logic that chains renewals in date order with grace periods, and it has tests. It needs a home and staff onboarding.',
-        meta: { text: 'Built · awaiting deployment', state: 'testing' },
-        tags: ['Aquatics', 'PWA', 'Barcode']
-      },
-      {
-        title: 'Sanchari on tablet and desktop',
-        body: 'The app is mobile-only by construction — a fixed narrow column that renders as a phone-shaped strip on a laptop. Real breakpoints are the next visual job.',
-        meta: { text: 'Not started', state: 'soon' },
-        tags: ['Sanchari', 'Responsive']
+        title: 'IITH Aquatics Gate',
+        body: 'The gate scanner is finished, including the expiry logic that chains renewals in date order with grace periods, and 57 tests pass. It is committed beside the live portal, blocked from the web until the two are merged.',
+        meta: { text: 'Built · awaiting merge', state: 'testing' },
+        tags: ['Aquatics', 'Gate', 'Barcode']
       }
     ]
   },
@@ -403,23 +390,41 @@ var BOARD = [
     icon: 'check',
     items: [
       {
+        title: 'Sanchari boarding pass printer',
+        date: 'Oct 2026',
+        isNew: true,
+        body: 'The boarding pass now prints out of a slot and tears off, alongside launch-readiness fixes to rebooking and schedules.',
+        tags: ['sanchari.iith.online', 'Ticketing']
+      },
+      {
+        title: 'Sanchari on every screen',
+        date: 'Sep 2026',
+        isNew: true,
+        body: 'Real tablet and desktop layouts, recoverable bookings and single-use check-in at the driver scan screen.',
+        tags: ['sanchari.iith.online', 'Responsive']
+      },
+      {
+        title: 'Ruchi daily dining goes live',
+        date: 'Sep 2026',
+        isNew: true,
+        body: 'The mess portal became a daily companion: the posted menu, priced Extras, saved dishes, My Plate and issue reports, live at ruchi.iith.online.',
+        tags: ['ruchi.iith.online', 'Daily menu']
+      },
+      {
         title: 'Abhyas goes live',
         date: 'Aug 2026',
-        isNew: true,
         body: 'The course library was rebuilt with an identity of its own and shipped to abhyas.iith.online — past papers, notes, assignment solutions and a reference shelf, grouped by course across 15 departments, with an open contribution flow and a contributor leaderboard.',
         tags: ['abhyas.iith.online', 'Contribution flow']
       },
       {
         title: 'Ruchi branded, sourced and published',
         date: 'Aug 2026',
-        isNew: true,
         body: 'The mess portal picked up a name, a vision document, a public repository and a subdomain of its own at ruchi.iith.online.',
         tags: ['ruchi.iith.online', 'Open source']
       },
       {
         title: 'Security review across every live project',
         date: 'Aug 2026',
-        isNew: true,
         body: 'Each deployed project was audited, and every finding tracked in a KNOWN_ISSUES file that lives with the code rather than in someone’s memory.',
         tags: ['Audit', 'Engineering']
       },
@@ -439,19 +444,13 @@ var BOARD = [
         title: 'Sanchari campus transit',
         date: 'Jul 2026',
         body: 'Shuttle, Patancheru and Miyapur schedules with live countdowns and expandable route cards.',
-        tags: ['sanchari.iith.online', 'PWA']
+        tags: ['sanchari.iith.online', 'Countdowns']
       },
       {
         title: 'Aquatics pool portal',
         date: 'Jul 2026',
         body: 'The ten-tier fee structure, timings, safety rules and sign-up flow for the SNCC pool, published in one place.',
         tags: ['aquatics.iith.online', 'Static']
-      },
-      {
-        title: 'Transit terms and privacy framework',
-        date: 'Jul 2026',
-        body: 'Terms of transit, student privacy and payment-safety guidance written and published alongside the transit app.',
-        tags: ['Compliance', 'Privacy']
       }
     ]
   }
@@ -469,14 +468,14 @@ var TIMELINE = [
   },
   {
     date: '24 Jul 2026',
-    title: 'Lane 1 gate scanner begins',
+    title: 'Pool gate scanner begins',
     body: 'First commits on the poolside entry-verification app — barcode lookup, offline-first, and the expiry logic that computes what the pool’s own records never stored.',
     tags: ['Aquatics']
   },
   {
     date: '29 Jul 2026',
     title: 'Aquatics portal ships',
-    body: 'The public-facing pool portal — fee tiers, timings, safety rules, sign-up flow — takes over the repository that started as Lane 1.',
+    body: 'The public-facing pool portal — fee tiers, timings, safety rules, sign-up flow — takes over the repository that started as the gate scanner.',
     tags: ['Aquatics']
   },
   {
@@ -502,6 +501,30 @@ var TIMELINE = [
     title: 'Ruchi named and published',
     body: 'The mess portal became IITH Ruchi, with a vision document separating the monthly registration loop from the daily menu loop, and went public on GitHub.',
     tags: ['Ruchi']
+  },
+  {
+    date: '22 Sep 2026',
+    title: 'Ruchi daily dining beta',
+    body: 'Ruchi turned from a once-a-month registration form into a daily menu app: meals by time of day, the four-week rotation resolved from the date, saved dishes and My Plate. Priced Extras followed two days later.',
+    tags: ['Ruchi']
+  },
+  {
+    date: '25 Sep 2026',
+    title: 'Sanchari on every screen',
+    body: 'Tablet and desktop layouts, recoverable bookings and single-use check-in, with paid booking still switched off.',
+    tags: ['Sanchari']
+  },
+  {
+    date: '4 Oct 2026',
+    title: 'Milan 2026 results',
+    body: 'Milan 2026 results published on the Athletics site and linked to athlete profiles, under a written eligibility rulebook for who gets a profile.',
+    tags: ['Athletics']
+  },
+  {
+    date: '31 Oct 2026',
+    title: 'The printed boarding pass',
+    body: 'Sanchari’s pass now prints out of a slot and tears off, shipped with a launch-readiness pass over rebooking and schedules.',
+    tags: ['Sanchari']
   }
 ];
 
@@ -511,12 +534,12 @@ var STACK_MATRIX = [
   {
     tech: 'Vanilla JS, no build step',
     note: 'Every project ships the files it serves. No bundler, no framework, no compile.',
-    projects: ['athletics', 'sanchari', 'nivas', 'mess', 'lane1']
+    projects: ['resources', 'athletics', 'sanchari', 'nivas', 'ruchi', 'aquatics']
   },
   {
-    tech: 'PHP + MySQL',
-    note: 'Server-side authority where money or real data is involved.',
-    projects: ['sanchari', 'nivas']
+    tech: 'PHP on the server',
+    note: 'Server-side authority where money or real data is involved: MySQL behind Sanchari and Nivas, moderated JSON files behind Abhyas.',
+    projects: ['resources', 'sanchari', 'nivas']
   },
   {
     tech: 'Three.js WebGL',
@@ -530,13 +553,13 @@ var STACK_MATRIX = [
   },
   {
     tech: 'Supabase Postgres',
-    note: 'Seat caps and registrations, behind a one-file config switch.',
-    projects: ['mess']
+    note: 'Schema ready for Ruchi registration and seat caps, behind a one-file config switch. Not switched on yet.',
+    projects: ['ruchi']
   },
   {
     tech: 'Google Sheets + Apps Script',
-    note: 'A free reactive datastore where a real database would be overkill.',
-    projects: ['lane1']
+    note: 'Where the pool’s sign-ups and member records already live, so the gate scanner reads them instead of copying them.',
+    projects: ['aquatics']
   },
   {
     tech: 'HMAC-signed tokens',
@@ -546,17 +569,17 @@ var STACK_MATRIX = [
   {
     tech: 'Barcode scanning',
     note: 'Reading the card students already carry instead of issuing a new one.',
-    projects: ['lane1', 'mess']
+    projects: ['aquatics', 'ruchi']
   },
   {
     tech: 'Offline-first PWA',
     note: 'Service workers, so a poolside gate keeps working when campus Wi-Fi does not.',
-    projects: ['lane1']
+    projects: ['aquatics']
   },
   {
     tech: 'Git auto-deploy',
     note: 'Push to main, and the live site updates itself.',
-    projects: ['athletics', 'sanchari', 'nivas', 'lane1']
+    projects: ['resources', 'athletics', 'sanchari', 'nivas', 'ruchi', 'aquatics']
   }
 ];
 

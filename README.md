@@ -31,10 +31,10 @@ screenshot mode).
 | Abhyas | `abhyas.iith.online` | live resource service |
 | Merch Store | `store.iith.online` | live external product |
 | IITH Athletics | `athletics.iith.online` | live static site |
-| Sanchari | `sanchari.iith.online` | live; ticket lifecycle work remains |
+| Sanchari | `sanchari.iith.online` | live; paid booking switched off |
 | Nivas | `nivas.iith.online` | live PHP/MySQL service |
 | IITH Aquatics | `aquatics.iith.online` | live static signpost |
-| Ruchi | `ruchi.iith.online` | frontend live in demo mode; shared backend pending |
+| Ruchi | `ruchi.iith.online` | live daily dining beta; registration backend not switched on |
 
 ## Editing
 
