@@ -217,11 +217,11 @@ var PROJECTS = [
     year: '2026',
     started: 'Jul 2026',
     accentColor: '#38BDF8',
-    metric: { label: 'Hostel blocks', value: '16 modelled' },
+    metric: { label: 'Hostels', value: '13 mapped' },
     blurb:
       'A student-built room-swap board for the hostel precinct. Orbit a 3D model of a block, walk it floor by floor across plans traced from the real architectural drawing, then post or find a swap. It makes no claim about official occupancy — a room shows a status only because a student published one.',
     highlights: [
-      'All 16 hostel blocks, each with a 3D model you can orbit and slice floor by floor',
+      'All 13 hostels on the board in a 3D model built from site photographs, with six or ten floors to match each block, that you can orbit and open floor by floor',
       'Floor plans traced by hand from the real architectural drawing, not approximated',
       'Room-swap listings posted by students themselves, gated behind @iith.ac.in email verification',
       'Three.js and OrbitControls vendored locally — the page pulls nothing from a CDN',
@@ -229,12 +229,13 @@ var PROJECTS = [
     ],
     stack: ['Three.js WebGL', 'PHP', 'MySQL', 'Vanilla JS'],
     specs: {
-      blocks: '16 modelled',
+      hostels: '13 mapped',
       identity: '@iith.ac.in',
       licence: 'MIT',
       source: 'Public repo'
     },
     next: [
+      'A campus view of every hostel together, where tapping one flies in to it',
       'A complaints channel for hostel maintenance — Wi-Fi, washrooms, cleaning',
       'A wider institute complaints route, once it is clear who actually receives them',
       'A moderation console, so removing a bad listing is not a manual database edit'
@@ -437,7 +438,7 @@ var BOARD = [
       {
         title: 'Nivas 3D hostel navigator',
         date: 'Jul 2026',
-        body: 'A WebGL building inspector and a student room-swap board across all 16 blocks, on an auto-deploy pipeline.',
+        body: 'A WebGL building inspector and a student room-swap board across every hostel on campus that it covers, on an auto-deploy pipeline.',
         tags: ['nivas.iith.online', 'Three.js']
       },
       {
